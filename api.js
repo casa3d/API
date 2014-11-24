@@ -43,5 +43,6 @@ a={//API
     a.a(b,p)
     c.className=a.cn.inv+u
     a.a(a.sty(p.className=v[0]+u),'head')//appending 绝 后 style to head
-    'end'}}
+    a.bt.onclick=function(){
+      console.log('end')}}}
 a.set()
