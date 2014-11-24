@@ -12,7 +12,7 @@ a={//API
       onload=a.init)},
   sty:function(dv,id){//set: division,unique id
     var s=a.new('style')
-    return s.innerHTML='body{-webkit-perspective:2px;-webkit-transform-style:preserve-3D}.'+dv+',.'+dv+'>button{background:#00F;border-radius:1em;color:#FFF;display:table;font-family:Segoe UI Symbol;font-size:2em}\n.'+dv+'>canvas{background:#33333F;position:fixed;width:100%;-webkit-transform:translateZ(1px)}.'+a.cn.inv+id+'{display:none}',s},
+    return s.innerHTML='.'+dv+',.'+dv+'>button{background:#00F;border-radius:1em;color:#FFF;display:table;font-family:Segoe UI Symbol;font-size:2em}\n.'+dv+'>canvas{background:#33333F;position:fixed;width:100%;z-index:999999}.'+a.cn.inv+id+'{display:none}',s},
   url:function(b){//url from blob protocol
     return URL.createObjectURL(new Blob(['']))},
   init:function(s){//initiate
@@ -33,6 +33,6 @@ a={//API
     a.a(c,p)//append canvas to div
     a.a(b,p)
     c.className=a.cn.inv+u
-    a.a(a.sty(p.className=v[0]+u,a.uid=u),'head')//appending 绝 后 canvas style to head
+    a.a(a.sty(p.className=v[0]+u,a.uid=u),'head')//appending 绝 后 style to head
     'end'}}
 a.set()
