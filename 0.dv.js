@@ -10,29 +10,38 @@ a={//API
       :(
       console.log(a.d.readyState),
       onload=a.init)},
-  sty:function(dv,id){//set: division,unique id
-    var s=a.new('style')
-    return s.innerHTML='.'+dv+',.'+dv+'>button{background:#00F;border-radius:1em;color:#FFF;display:table;font-family:Segoe UI Symbol;font-size:2em}\n.'+dv+'>canvas{background:#33333F;position:fixed;width:100%;z-index:999999}.'+a.cn.inv+id+'{display:none}',s},
+  sty:function(shi){//set: division,unique id
+    var id=(shi='.'+shi).slice(2),sty=a.new('style'),kj=a.cn,bt=shi+'>button',cv=shi+'>canvas'
+    sty.innerHTML=
+      shi+'{background:#180;height:100%;width:100%;z-index:999999}\n'+
+      bt+'{background:#015;border-radius:1em}\n'+
+      cv+'{background:#057E9C}\n'+
+      shi+','+bt+'{color:#FFF;display:table;font-family:Segoe UI Symbol;font-size:2em;position:fixed}\n'+
+      '.'+kj.man+id+','+cv+'{height:100%;width:100%}\n'+
+      kj.wuxing+id+'{display:none}'
+    return sty},
   url:function(b){//url from blob protocol
     return URL.createObjectURL(new Blob(['']))},
   init:function(s){//initiate
     var v,p=a.p=a.new('div'),c=a.cv=a.new('canvas'),b=a.bt=a.new('button'),u=a.url().split('-')
     b.innerHTML='&#127968;'//🏠
-    u=u[u.length-1]
-    p.innerHTML='&#24072;&#26080;&#24418;'//parsing characters
+    a.uid=u=u[u.length-1]
+    p.innerHTML='&#24072;&#26080;&#24418;&#28385;'//parsing characters
     /*Chinese Characters used:
     师 Shī: division
-    无形 Wúxíng: invisible*/
+    无形 Wúxíng: invisible
+    满 Mǎn: full*/
     v=p.innerHTML//ok, gathering result
     a.cn={
-      div:v[0],
-      inv:v[1]+v[2]}
+      shi:v[0],
+      wuxing:v[1]+v[2],
+      man:v[3]}
     p.innerHTML=''
 
     a.a(p,'body')
     a.a(c,p)//append canvas to div
     a.a(b,p)
     c.className=a.cn.inv+u
-    a.a(a.sty(p.className=v[0]+u,a.uid=u),'head')//appending 绝 后 style to head
+    a.a(a.sty(p.className=v[0]+u),'head')//appending 绝 后 style to head
     'end'}}
 a.set()
